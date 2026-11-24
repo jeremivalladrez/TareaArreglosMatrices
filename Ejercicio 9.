@@ -1,0 +1,34 @@
+package tarea.arreglo.matrices;
+
+import java.util.Scanner;
+
+/**
+ * Determina el valor mayor y el menor de una matriz de cinco por cinco.
+ *
+ * @author Jeremy Joel Valladarez Caballero
+ */
+public class Ejercicio9 {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int[][] matriz = new int[5][5];
+
+        System.out.println("MAYOR Y MENOR DE UNA MATRIZ 5 X 5");
+        for (int fila = 0; fila < matriz.length; fila++) {
+            for (int columna = 0; columna < matriz[fila].length; columna++) {
+                System.out.print("Valor [" + fila + "][" + columna + "]: ");
+                matriz[fila][columna] = entrada.nextInt();
+            }
+        }
+
+        int mayor = matriz[0][0], menor = matriz[0][0];
+        for (int[] fila : matriz) {
+            for (int valor : fila) {
+                if (valor > mayor) mayor = valor;
+                if (valor < menor) menor = valor;
+            }
+        }
+        System.out.println("\nMayor valor de la matriz: " + mayor);
+        System.out.println("Menor valor de la matriz: " + menor);
+        entrada.close();
+    }
+}
