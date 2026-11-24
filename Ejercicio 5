@@ -1,0 +1,30 @@
+package tarea.arreglo.matrices;
+
+import java.util.Scanner;
+
+/**
+ * Llena y muestra una matriz de tres filas y cuatro columnas.
+ *
+ * @author Jeremy Joel Valladarez Caballero
+ */
+public class Ejercicio6 {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int[][] matriz = new int[3][4];
+
+        System.out.println("LLENADO DE MATRIZ 3 X 4");
+        for (int fila = 0; fila < matriz.length; fila++) {
+            for (int columna = 0; columna < matriz[fila].length; columna++) {
+                System.out.print("Valor [" + fila + "][" + columna + "]: ");
+                matriz[fila][columna] = entrada.nextInt();
+            }
+        }
+
+        System.out.println("\nMATRIZ INGRESADA");
+        for (int[] fila : matriz) {
+            for (int valor : fila) System.out.print(valor + "\t");
+            System.out.println();
+        }
+        entrada.close();
+    }
+}
