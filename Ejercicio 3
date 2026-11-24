@@ -1,0 +1,34 @@
+package tarea.arreglo.matrices;
+
+import java.util.Scanner;
+
+/**
+ * Cuenta y suma los números pares e impares de un arreglo.
+ *
+ * @author Jeremy Joel Valladarez Caballero
+ */
+public class Ejercicio4 {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int[] numeros = new int[20];
+        int cantidadPares = 0, cantidadImpares = 0;
+        int sumaPares = 0, sumaImpares = 0;
+
+        System.out.println("NÚMEROS PARES E IMPARES");
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.print("Ingrese el número " + (i + 1) + ": ");
+            numeros[i] = entrada.nextInt();
+            if (numeros[i] % 2 == 0) {
+                cantidadPares++; sumaPares += numeros[i];
+            } else {
+                cantidadImpares++; sumaImpares += numeros[i];
+            }
+        }
+
+        System.out.println("\nCantidad de números pares: " + cantidadPares);
+        System.out.println("Cantidad de números impares: " + cantidadImpares);
+        System.out.println("Suma de los números pares: " + sumaPares);
+        System.out.println("Suma de los números impares: " + sumaImpares);
+        entrada.close();
+    }
+}
