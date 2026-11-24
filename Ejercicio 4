@@ -1,0 +1,32 @@
+package tarea.arreglo.matrices;
+
+import java.util.Scanner;
+
+/**
+ * Suma el índice de la posición a cada número positivo ingresado.
+ *
+ * @author Jeremy Joel Valladarez Caballero
+ */
+public class Ejercicio5 {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int[] numeros = new int[12];
+
+        System.out.println("MODIFICACIÓN DEL ARREGLO");
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.print("Ingrese un número positivo para la posición " + i + ": ");
+            int numero = entrada.nextInt();
+            while (numero <= 0) {
+                System.out.print("Error. Ingrese nuevamente un número positivo: ");
+                numero = entrada.nextInt();
+            }
+            numeros[i] = numero + i;
+        }
+
+        System.out.println("\nARREGLO MODIFICADO");
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.println("Posición " + i + ": " + numeros[i]);
+        }
+        entrada.close();
+    }
+}
