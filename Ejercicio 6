@@ -1,0 +1,28 @@
+package tarea.arreglo.matrices;
+
+import java.util.Scanner;
+
+/**
+ * Calcula la suma total de una matriz de cuatro por cuatro.
+ *
+ * @author Jeremy Joel Valladarez Caballero
+ */
+public class Ejercicio7 {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int[][] matriz = new int[4][4];
+        int sumaTotal = 0;
+
+        System.out.println("SUMA DE UNA MATRIZ 4 X 4");
+        for (int fila = 0; fila < matriz.length; fila++) {
+            for (int columna = 0; columna < matriz[fila].length; columna++) {
+                System.out.print("Valor [" + fila + "][" + columna + "]: ");
+                matriz[fila][columna] = entrada.nextInt();
+                sumaTotal += matriz[fila][columna];
+            }
+        }
+
+        System.out.println("\nSuma total de los elementos: " + sumaTotal);
+        entrada.close();
+    }
+}
